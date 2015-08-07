@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <title>Device Orientation</title>
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+</head>
+
+<body>
+    <h3>Device Orientation</h3>
+    <div id="message"></div>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            function handleOrientation(eventData) {
+                // alpha is the compass direction the device is facing in degrees 
+                var alpha = eventData.alpha;
+                // gamma is the left-to-right tilt in degrees, where right is positive 
+                var gamma = eventData.gamma;
+                // beta is the front-to-back tilt in degrees, where front is positive 
+                var beta = eventData.beta;
+                var data = [alpha, beta, gamma];
+                $('#message').text('Orientation changed: ' + data.join(', '));
+            }
+            if (Modernizr.deviceorientation) {
+                window.addEventListener('deviceorientation', handleOrientation, false);
+            }
+            else {
+                $('#message').text('this browser doesn\'t support Device Orientation');
+            }
+        });
+    </script>
+</body>
+
+</html>

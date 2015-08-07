@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Multi Pages</title>
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="//code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.css">
+</head>
+
+<body>
+    <div data-role="page" id="index">
+        <header data-role="header">
+            <h1>First Page</h1>
+        </header>
+
+        <div data-role="content">
+            <h3>Show another page??</h3>
+            <p>hint: click the button below!</p>
+            <p><a href="#list" data-role="button" data-theme="c">List</a></p>
+        </div>
+
+        <footer data-role="footer" class="ui-body-b">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#index" data-direction="reverse">App Homescreen!</a></li>
+                    <li><a href="https://www.google.com/" data-rel="external">Google Me</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <div data-role="page" id="list" data-add-back-btn="true">
+        <header data-role="header">
+            <h1>List Page</h1>
+        </header>
+
+        <div data-role="content">
+            <ul data-role="listview" data-theme="c">
+                <li>
+                    <a href="#">
+                        <h3 class="ui-li-heading">Wunderkit tasks</h3>
+                        <p class="ui-li-desc">by Sebastian Scheerer</p>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <h3 class="ui-li-heading">Colleeeeeeeeeeeeege</h3>
+                        <p class="ui-li-desc">by Scott Hill</p>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.google.com">
+                        <h3 class="ui-li-heading">Google</h3>
+                        <p class="ui-li-desc">by John Doe</p>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <!--<img src="img/twitter-t.png" class="ui-li-thumb" />-->
+                        <h3 class="ui-li-heading">Twitter</h3>
+                        <p class="ui-li-desc">by Sam Jones</p>
+                    </a>
+                </li>
+            </ul>
+            <p>I mean, you can <a data-rel="back" href="#index">go back</a> at any time.</p>
+        </div>
+
+        <footer data-role="footer">
+            <h3>www.dribbble.com</h3></footer>
+
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.6.4.min.js"></script>
+        <script type="text/javascript" src="//code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" manifest="app.appcache">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <title>Application Cache</title>
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+</head>
+
+<body>
+    <h3>Application Cache</h3>
+    <div id="message"></div>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            function deviceOnline(e) {
+                $('#message').append('<br>event changed: device is online now');
+            }
+
+            function deviceOffline(e) {
+                $('#message').append('<br>event changed: device is offline now');
+            }
+            if (Modernizr.applicationcache) {
+                window.addEventListener('online', deviceOnline, false);
+                window.addEventListener('offline', deviceOffline, false);
+                
+                if (navigator.onLine) {
+                    $('#message').append('This device is online');
+                }
+                else {
+                    $('#message').append('This device is offline');
+                }
+            }
+            else {
+                $('#message').append('this browser doesn\'t support Application Cache');
+            }
+        });
+    </script>
+</body>
+
+</html>
