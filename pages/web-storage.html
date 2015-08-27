@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <title>Web Storage</title>
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+</head>
+
+<body>
+    <div id="localStorage"></div>
+    <div id="sessionStorage"></div>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            if (Modernizr.localstorage) {
+                localStorage['localStorage'] = 'this message stored by local storage';
+            }
+            if (Modernizr.sessionstorage) {
+                sessionStorage['sessionStorage'] = true;
+            }
+            $('#localStorage').html(localStorage['localStorage']);
+            $('#sessionStorage').html(sessionStorage['sessionStorage']);
+        });
+    </script>
+</body>
+
+</html>

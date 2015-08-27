@@ -16,6 +16,7 @@
     <canvas id="canvasObject" width="575" height="285">
         Any text displayed here will be used as fallback, in case the current browser does not support the canvas object.
     </canvas>
+    <a href="/pages/">&lt;&lt; back</a>
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -30,13 +31,21 @@
                         // context.lineWidth = 4;
                         // context.fillRect (0, 0, 150, 50); 
                         // context.strokeRect(0, 60, 150, 50);
-                        
+
                         // Draw an image
                         var image = new Image(575, 285);
                         image.src = "http://www.toonbarn.com/wordpress/wp-content/uploads/2011/02/Despicable-Mes-Minions-and-the-Despicable-Banana.jpg"
                         image.onload = function() {
                             // Loading an image can take a while; hence the callback on the onload event... which is executed asynchronously.
                             context.drawImage(image, 10, 40);
+                        }
+
+                        if (Modernizr.datauri) {
+                            var url = canvas.toDataURL("image/png");
+                            window.open(url);
+                        }
+                        else {
+                            $('#message').text('this browser doesn\'t support Data URL');
                         }
                     }
                 }

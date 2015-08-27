@@ -13,6 +13,7 @@
 <body>
     <h3>Application Cache</h3>
     <div id="message"></div>
+    <a href="/pages/">&lt;&lt; back</a>
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -26,7 +27,7 @@
             if (Modernizr.applicationcache) {
                 window.addEventListener('online', deviceOnline, false);
                 window.addEventListener('offline', deviceOffline, false);
-                
+
                 if (navigator.onLine) {
                     $('#message').append('This device is online');
                 }
